@@ -1,0 +1,48 @@
+namespace FactoryPett
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            Division();
+        }
+
+        public static void Division()
+        {
+            while (true)
+            {
+                try
+                {
+                     Console.WriteLine("Enter first number:");
+                     int x = int.Parse(Console.ReadLine());
+                     Console.WriteLine("Enter second number:");
+                     int y = int.Parse(Console.ReadLine());
+
+                    if (y == 0)
+                    {
+                        throw new DivideByZeroException("Error: division by zero!");
+                    }
+
+                    if (x % y == 0 || y % x == 0)
+                    {
+                        Console.WriteLine("The numbers divide by each other.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: the numbers do not divide by each other.");
+                    }
+                }
+      
+                catch(FormatException)
+                {
+                    Console.WriteLine("Error: An incorrect number has been entered.");
+                }
+                catch (DivideByZeroException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+           
+        }
+    }
+}
