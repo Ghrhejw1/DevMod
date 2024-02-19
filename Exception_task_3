@@ -1,0 +1,42 @@
+namespace FunctionLibary
+{
+    public class FunctionCalculator
+    {
+        public static void CalculateFunction(double N, int k, int iterations)
+        {
+            double x = 0;
+            for (int i = 0; i <= k * 10; i++)
+            {
+                x = i / 10.0;
+                try
+                {
+                    if (x == N)
+                    {
+                        throw new DivideByZeroException("Division by 0.");
+                    }
+                    if (x < 0 || x > k)
+                    {
+                        throw new ArgumentOutOfRangeException("Out of range.");
+                    }
+
+                    double result = 1 / (x - N);
+                    Console.WriteLine($"f({x}) = {result}");
+                }
+                catch (DivideByZeroException e)
+                {
+                    Console.WriteLine($"Exception: {e.Message}");
+                }
+                catch (ArgumentOutOfRangeException e)
+                {
+                    Console.WriteLine($"Exception: {e.Message}");
+                }
+                finally
+                {
+                    iterations--;
+                    if (iterations == 0);
+
+                }
+            }
+        }
+    }
+}
