@@ -29,7 +29,7 @@ namespace SingletonPattern
             
             if (server.StartsWith("http://") || server.StartsWith("https://"))
             {
-                // Проверка наличия дубликата
+                
                 if (!serverList.Contains(server))
                 {
                     serverList.Add(server);
