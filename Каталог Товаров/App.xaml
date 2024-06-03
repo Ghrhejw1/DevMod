@@ -1,0 +1,16 @@
+﻿<Application x:Class="TradeCatalog.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TradeCatalog"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style x:Key="ProductItemStyle" TargetType="ListViewItem">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding QuantityInStock}" Value="0">
+                    <Setter Property="Background" Value="Gray"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Application.Resources>
+
+</Application>
